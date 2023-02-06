@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Credito} from "./model/credito.model";
+import {CreditoService} from "./service/credito/credito.service";
+import {lastValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng_teste_tecnico';
+  currentStep: number = 1;
+  calculado: boolean = false;
+  carregando: boolean = false;
+  credito: Credito = new Credito();
+
+  constructor(
+    private creditoService: CreditoService
+  ) {}
+
+
+  public async calcular(): Promise<void> {
+    try {
+      this.carregando = true;
+      this.credito = await lastValueFrom(this.creditoService.calcularCredito(this.credito));
+      this.calculado = true;
+    } finally {
+      this.carregando = false;
+    }
+  }
+
+  imprimir(): void {
+    window.print()
+  }
 }
