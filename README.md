@@ -1,27 +1,30 @@
-# NgTesteTecnico
+# Crédito Fácil
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+## Dependencias
+Angular CLI 15.0.5
 
-## Development server
+Node 18.13.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+npm 8.19.3
 
-## Code scaffolding
+## Iniciando o projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para instalar o projeto, clone o repositório:
 
-## Build
+`git clone https://@bitbucket.org/eliasvieira/ng_teste_tecnico.git`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Acesse a pasta usando `cd ng_test_tecnico`
 
-## Running unit tests
+Instale as dependencias `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Servidor de desenvolvimento
 
-## Running end-to-end tests
+Rode `ng serve`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Acesse `http://localhost:4200/`. 
 
-## Further help
+A aplicação vai atualizar automaticamente se você alterar qualquer arquivo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Rodando testes unitários
+
+Rode `ng test` para executar os testes unitários via [Karma](https://karma-runner.github.io).
