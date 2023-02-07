@@ -13,6 +13,7 @@ export class AppComponent {
   calculado: boolean = false;
   carregando: boolean = false;
   credito: Credito = new Credito();
+  propostaCredito: Credito = new Credito();
 
   constructor(
     private creditoService: CreditoService
@@ -22,7 +23,7 @@ export class AppComponent {
   public async calcular(): Promise<void> {
     try {
       this.carregando = true;
-      this.credito = await lastValueFrom(this.creditoService.calcularCredito(this.credito));
+      this.propostaCredito = await lastValueFrom(this.creditoService.calcularCredito(this.credito));
       this.calculado = true;
     } finally {
       this.carregando = false;

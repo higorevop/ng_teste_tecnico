@@ -120,7 +120,7 @@
     <div class="flex flex-col pr-14">
       <p class="text-5xl w-96">{{credito.nome}}, temos uma ótima oferta para você!</p>
       <p class="pr-10 w-96 pt-5">
-        Conseguimos uma taxa de juros reduzida para você! Então é só conitunar para finalizar seu pedido.
+        Conseguimos uma taxa de juros reduzida para você! Então é só continuar para finalizar seu pedido.
       </p>
     </div>
 
@@ -128,49 +128,58 @@
      <div>
        <p class="text-4xl pt-3">Simulação do empréstimo</p>
        <p class="pr-10 w-96">
-         O valor estará em sua conta em até 24 horas após aprovadação.
+         O valor estará em sua conta em até 24 horas após aprovação.
        </p>
        <div class="grid grid-cols-3 gap-3 text-xl pt-3">
          <div class="rounded px-1 py-1 bg-gradient-to-r from-indigo-500 to-purple-500">
            <div class="flex flex-col justify-center h-full bg-white rounded p-2">
              <span class="text-xs">Valor das parcelas</span>
-             <p class="font-bold">{{credito.valor_parcelas | currency}}</p>
+             <p class="font-bold">{{propostaCredito.valor_parcelas | currency}}</p>
            </div>
          </div>
 
          <div class="rounded px-1 py-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500">
            <div class="flex flex-col justify-center h-full bg-white rounded p-2">
              <span class="text-xs">Juros</span>
-             <p class="font-bold">{{credito.juros}}% / mês</p>
+             <p class="font-bold">{{propostaCredito.juros}}% / mês</p>
            </div>
          </div>
 
          <div class="rounded px-1 py-1 bg-gradient-to-r from-purple-500 to-indigo-500">
            <div class="flex flex-col justify-center h-full bg-white rounded p-2">
              <span class="text-xs">Parcelas</span>
-             <p class="font-bold">{{credito.meses_parcelamento}} meses</p>
-           </div>
-         </div>
-         <div class="rounded px-1 py-1 bg-gradient-to-r from-indigo-500 to-purple-500">
-           <div class="flex flex-col justify-center h-full bg-white rounded p-2">
-             <span class="text-xs">Valor total</span>
-             <p class="font-bold">{{credito.valor_total | currency}}</p>
+             <p class="font-bold">{{propostaCredito.meses_parcelamento}} meses</p>
            </div>
          </div>
 
          <div class="rounded px-1 py-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500">
            <div class="flex flex-col justify-center h-full bg-white rounded p-2">
              <span class="text-xs">Renda necessária</span>
-             <p class="font-bold">{{credito.renda_necessaria | currency}}</p>
+             <p class="font-bold">{{propostaCredito.renda_necessaria | currency}}</p>
            </div>
          </div>
 
          <div class="rounded px-1 py-1 bg-gradient-to-r from-purple-500 to-indigo-500">
            <div class="flex flex-col justify-center h-full bg-white rounded p-2">
              <span class="text-xs">Dia do pagamento</span>
-             <p class="font-bold">dia {{credito.dia_pagamento}}</p>
+             <p class="font-bold">dia {{propostaCredito.dia_pagamento}}</p>
            </div>
          </div>
+
+         <div class="rounded px-1 py-1 bg-gradient-to-r from-purple-500 to-indigo-500">
+           <div class="flex flex-col justify-center h-full bg-white rounded p-2">
+             <span class="text-xs">Valor solicitado</span>
+             <p class="font-bold">dia {{credito.valor_solicitado}}</p>
+           </div>
+         </div>
+
+         <div class="rounded px-1 py-1 bg-gradient-to-r from-indigo-500 to-purple-500">
+           <div class="flex flex-col justify-center h-full bg-white rounded p-2">
+             <span class="text-xs">Valor total</span>
+             <p class="font-bold">{{propostaCredito.valor_total | currency}}</p>
+           </div>
+         </div>
+
        </div>
        <div class="flex justify-end">
          <button class="form-input rounded mt-5 mr-1" (click)="currentStep = 3; calculado = false;">Voltar</button>
